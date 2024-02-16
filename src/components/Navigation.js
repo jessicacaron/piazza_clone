@@ -5,9 +5,9 @@ function Navigation() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          LogicLeap
-        </a>
+        <p>LogicLeap</p>
+          
+        
         <button
           className="navbar-toggler"
           type="button"

@@ -15,7 +15,7 @@ const Sidenav = () => {
     <div>
       <span onClick={openNav}>&#9776; </span>
       <div id="mySidenav" className="sidenav">
-        <button href="#" className="closebtn" onClick={closeNav}>
+        <button className="closebtn" onClick={closeNav}>
           &times;
         </button>
         <NavLink to="/discussion" className="my-4 pl-4" onClick={closeNav}>Discussions</NavLink>
