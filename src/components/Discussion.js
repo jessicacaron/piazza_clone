@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState}  from "react";
 import { NavLink } from "react-router-dom";
 import Sidenav from "./Sidenav";
 import "./Discussion.css";
@@ -52,6 +52,19 @@ const Discussion = () => {
     },
   ];
 
+    // State for the search query
+    const [searchQuery, setSearchQuery] = useState("");
+
+    // Filtered discussions based on search query
+    const filteredDiscussions = discussions.filter((discussion) =>
+      discussion.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  
+    // Event handler for updating search query
+    const handleSearchInputChange = (event) => {
+      setSearchQuery(event.target.value);
+    };
+
   return (
     <div>
       <Sidenav></Sidenav>
@@ -60,7 +73,10 @@ const Discussion = () => {
           <p className="text-end">Discussions</p>
           <hr />
 
+          
+
           <div className="col-md-2 col col-left text-center">
+            {/* Your filter links */}
             <h6>Filter</h6>
             <hr />
             <NavLink
@@ -186,8 +202,17 @@ const Discussion = () => {
           </div>
           <div className="col-md-10 p-4">
             <h6>All Posts</h6>
+            {/* Search input field */}
+          <input
+            type="text"
+            placeholder="Search discussions..."
+            value={searchQuery}
+            onChange={handleSearchInputChange}
+            className="form-control mb-3"
+          />
             <ul>
-              {discussions.map((discussion) => (
+              {/* Render filtered discussions */}
+              {filteredDiscussions.map((discussion) => (
                 <li className="post" key={discussion.id}>
                   <h3>{discussion.title}</h3>
                   <p>{discussion.description}</p>
@@ -205,3 +230,4 @@ const Discussion = () => {
 };
 
 export default Discussion;
+
