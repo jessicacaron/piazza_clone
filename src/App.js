@@ -1,5 +1,3 @@
-// App.js
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation'; // Import the Navigation component
@@ -8,12 +6,14 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Discussion from './components/Discussion';
 import Reports from './components/Reports';
+import ReactDOM from 'react-dom'
+
 
 function App() {
   return (
     <Router>
       <div>
-        <Navigation /> {/* Include the Navigation component */}
+        {/* <Navigation />  */}
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />

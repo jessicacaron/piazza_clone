@@ -57,10 +57,10 @@ const Discussion = () => {
       <Sidenav></Sidenav>
       <div className="main">
         <div className="row">
-          <h1>Discussion</h1>
+          <p className="text-end">Discussions</p>
           <hr />
 
-          <div className="col-1 col-left text-center">
+          <div className="col-md-2 col col-left text-center">
             <h6>Filter</h6>
             <hr />
             <NavLink
@@ -184,7 +184,7 @@ const Discussion = () => {
               SS 5
             </NavLink>
           </div>
-          <div className="col-11 p-4">
+          <div className="col-md-10 p-4">
             <h6>All Posts</h6>
             <ul>
               {discussions.map((discussion) => (

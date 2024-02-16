@@ -1,12 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faComments} from '@fortawesome/free-solid-svg-icons'    
+      
 function Navigation() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary mb-4">
       <div className="container-fluid">
-        <p>LogicLeap</p>
-          
+      <FontAwesomeIcon icon={faComments} />          
         
         <button
           className="navbar-toggler"

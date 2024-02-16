@@ -2,28 +2,30 @@ import React from "react";
 import "./Home.css";
 import "./Sidenav";
 import Sidenav from "./Sidenav";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAt, faAnglesUp, faQuestion, faStamp } from '@fortawesome/free-solid-svg-icons'    
 
 function Home() {
   return (
     <div className="mx-3">
       <div className="row row-main">
-        <div className="col-2 col-left">
+        <div className="col-sm-1 col-left">
           <Sidenav></Sidenav>
           <div className="stats text-center pt-4 mt-4">
-            <h3>Mentions</h3>
+            <h3><FontAwesomeIcon icon={faAt} /></h3>
             <p>5</p>
             <br />
-            <h3>Upvotes</h3>
+            <h3><FontAwesomeIcon icon={faAnglesUp} /></h3>
             <p>3</p>
             <br />
-            <h3>Questions</h3>
+            <h3><FontAwesomeIcon icon={faQuestion} /></h3>
             <p>10</p>
             <br />
-            <h3>Endorsements</h3>
+            <h3><FontAwesomeIcon icon={faStamp} /></h3>
             <p>1</p>
           </div>
         </div>
-        <div className="col-10 col-right">
+        <div className="col-sm-11 col-right">
             <div className="announcements">
                 <h2>Announcements</h2>
             </div>
