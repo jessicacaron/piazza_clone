@@ -1,0 +1,16 @@
+.col-left {
+  border-right: 1px solid pink;
+}
+
+.row-main {
+  min-height: 90vh;
+}
+
+span {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.announcements{
+    min-height: 40vh;
+}
