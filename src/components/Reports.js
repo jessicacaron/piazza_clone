@@ -1,6 +1,5 @@
 import React from "react";
 import { useReactToPrint } from "react-to-print";
-import html2pdf from "html2pdf.js";
 
 const Report = ({students}) => { 
 
@@ -11,15 +10,7 @@ const Report = ({students}) => {
   });
 
   const handleExportPDF = () => {
-    const input = componentRef.current;
-    html2pdf(input, {
-      margin: 1,
-      filename: "student_report.pdf",
-      image: { type: "jpeg", quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-      pagebreak: { mode: "avoid-all" },
-    });
+    
   };
 
 

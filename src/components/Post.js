@@ -1,6 +1,5 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Sidenav from "./Sidenav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesUp, faReply, faAt, faEllipsis } from "@fortawesome/free-solid-svg-icons";
 
@@ -21,7 +20,7 @@ function Post({ discussions }) {
         {discussion ? (
           <>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <h2>{discussion.title}</h2>                <FontAwesomeIcon icon={faEllipsis}  size="1x"/>
+          <h2>{discussion.title}</h2><FontAwesomeIcon icon={faEllipsis}  size="1x"/>
 
           </div>
 
