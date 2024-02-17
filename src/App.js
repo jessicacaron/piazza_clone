@@ -1,15 +1,66 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation'; // Import the Navigation component
+//import Navigation from './components/Navigation'; // Import the Navigation component
 import Home from './components/Home'; // Import other components
 import Login from './components/Login';
 import Register from './components/Register';
 import Discussion from './components/Discussion';
 import Reports from './components/Reports';
-import ReactDOM from 'react-dom'
+//import ReactDOM from 'react-dom'
+import Post from './components/Post';
+
 
 
 function App() {
+
+  const discussions = [
+    {
+      id: 1,
+      title: "How to improve code readability?",
+      description:
+        "Looking for suggestions on improving code readability in JavaScript projects.",
+      author: "John Doe",
+      timestamp: new Date("2024-02-16T10:00:00"),
+      resolved: false,
+    },
+    {
+      id: 2,
+      title: "Best practices for React state management?",
+      description:
+        "Interested in learning about the best practices for managing state in React applications.",
+      author: "Jane Smith",
+      timestamp: new Date("2024-02-15T15:30:00"),
+      resolved: false,
+    },
+    {
+      id: 3,
+      title: "Debugging tips for Node.js applications",
+      description:
+        "Seeking advice on debugging techniques for Node.js applications.",
+      author: "Alice Johnson",
+      timestamp: new Date("2024-02-14T08:45:00"),
+      resolved: true,
+    },
+    {
+      id: 4,
+      title: "Discussion on CSS Flexbox vs. Grid",
+      description:
+        "Comparing CSS Flexbox and Grid layout systems for building responsive web designs.",
+      author: "Bob Williams",
+      timestamp: new Date("2024-02-13T11:20:00"),
+      resolved: false,
+    },
+    {
+      id: 5,
+      title: "Handling authentication in REST APIs",
+      description:
+        "Exploring different approaches for implementing authentication in RESTful APIs.",
+      author: "Emily Brown",
+      timestamp: new Date("2024-02-12T14:10:00"),
+      resolved: true,
+    },
+  ];
+
   return (
     <Router>
       <div>
@@ -18,10 +69,12 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/discussion" element={<Discussion />} />
+          <Route
+            path="/discussion"
+            element={<Discussion discussions={discussions} />} // Pass discussions as prop
+          />
           <Route path="/reports" element={<Reports />} />
-
-
+          <Route path="/post/:id" element={<Post discussions={discussions} />} /> {/* Pass discussions as prop */}
         </Routes>
       </div>
     </Router>

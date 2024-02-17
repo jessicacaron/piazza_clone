@@ -3,54 +3,8 @@ import { NavLink } from "react-router-dom";
 import Sidenav from "./Sidenav";
 import "./Discussion.css";
 
-const Discussion = () => {
-  const discussions = [
-    {
-      id: 1,
-      title: "How to improve code readability?",
-      description:
-        "Looking for suggestions on improving code readability in JavaScript projects.",
-      author: "John Doe",
-      timestamp: new Date("2024-02-16T10:00:00"),
-      resolved: false,
-    },
-    {
-      id: 2,
-      title: "Best practices for React state management?",
-      description:
-        "Interested in learning about the best practices for managing state in React applications.",
-      author: "Jane Smith",
-      timestamp: new Date("2024-02-15T15:30:00"),
-      resolved: false,
-    },
-    {
-      id: 3,
-      title: "Debugging tips for Node.js applications",
-      description:
-        "Seeking advice on debugging techniques for Node.js applications.",
-      author: "Alice Johnson",
-      timestamp: new Date("2024-02-14T08:45:00"),
-      resolved: true,
-    },
-    {
-      id: 4,
-      title: "Discussion on CSS Flexbox vs. Grid",
-      description:
-        "Comparing CSS Flexbox and Grid layout systems for building responsive web designs.",
-      author: "Bob Williams",
-      timestamp: new Date("2024-02-13T11:20:00"),
-      resolved: false,
-    },
-    {
-      id: 5,
-      title: "Handling authentication in REST APIs",
-      description:
-        "Exploring different approaches for implementing authentication in RESTful APIs.",
-      author: "Emily Brown",
-      timestamp: new Date("2024-02-12T14:10:00"),
-      resolved: true,
-    },
-  ];
+const Discussion = ({discussions}) => {
+
 
     // State for the search query
     const [searchQuery, setSearchQuery] = useState("");
@@ -219,6 +173,15 @@ const Discussion = () => {
                   <p>Author: {discussion.author}</p>
                   <p>Date/Time: {discussion.timestamp.toLocaleString()}</p>
                   <p>Resolved: {discussion.resolved ? "Yes" : "No"}</p>
+                  <NavLink
+                    className="btn btn-primary"
+                    to={{
+                      pathname: `/post/${discussion.id}`, // Pass the discussion ID as a URL parameter
+                      state: { discussions } // Optionally pass the discussion as state
+                    }}
+                  >
+                    View Details
+                  </NavLink>
                 </li>
               ))}
             </ul>
