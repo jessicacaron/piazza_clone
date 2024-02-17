@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Sidenav from "./Sidenav";
 import "./Discussion.css";
 
 
@@ -32,9 +31,9 @@ const Discussion = ({ discussions }) => {
     const assignmentMatchesFilter = filter
       ? discussion.assignment.includes(filter)
       : true;
-    const assignmentMatchesSearch = searchQuery
-      ? discussion.assignment.toLowerCase().includes(searchQuery.toLowerCase())
-      : true;
+    // const assignmentMatchesSearch = searchQuery
+    //   // ? discussion.assignment.toLowerCase().includes(searchQuery.toLowerCase())
+    //   // : true;
 
     return assignmentMatchesFilter && titleMatchesSearch;
   });

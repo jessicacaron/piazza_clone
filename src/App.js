@@ -6,7 +6,6 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Discussion from './components/Discussion';
 import Reports from './components/Reports';
-import ReactDOM from 'react-dom'
 import Post from './components/Post';
 
 

@@ -1,7 +1,6 @@
 import React from "react";
 import "./Home.css";
 import "./Sidenav";
-import Sidenav from "./Sidenav";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAt, faAnglesUp, faQuestion, faStamp } from '@fortawesome/free-solid-svg-icons'    
 
