@@ -55,7 +55,7 @@ function Post({ discussions }) {
             {showReply && <Reply />}
             {showButton ? (
                 <>
-                        <button onClick={handleReplyPost}>Post</button>
+                  <button onClick={handleReplyPost}>Post</button>
                 </>
             ) :(
                 <p></p>

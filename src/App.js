@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation'; // Import the Navigation component
-import Home from './components/Home'; // Import other components
-import Login from './components/Login';
-import Register from './components/Register';
-import Discussion from './components/Discussion';
-import Reports from './components/Reports';
-import Post from './components/Post';
-import Reply from './components/Reply';
+import Navigation from './components/UI/Navigation'; // Import the Navigation component
+import Home from './components/Pages/Home'; // Import other components
+import Login from './components/Auth/Login';
+import Register from './components/Auth/Register';
+import Discussion from './components/Posts/Discussion';
+import Reports from './components/Pages/Reports';
+import Post from './components/Posts/Post';
+import Reply from './components/Posts/Reply';
 import Admin from './components/Admin/Admin';
 
 

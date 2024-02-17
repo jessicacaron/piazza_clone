@@ -14,7 +14,7 @@ const Sidenav = () => {
         document.getElementById("mySidenav").style.width = "0";
       }
   return (
-    <div>
+    <div className="d-flex pb-2">
       <span onClick={openNav}><FontAwesomeIcon icon={faBars} className=""/></span>
       <div id="mySidenav" className="sidenav">
         <button className="closebtn" onClick={closeNav}>
@@ -32,7 +32,8 @@ const Sidenav = () => {
 
 
       </div>
-      <h6 className="p-1">CS 1234</h6>
+      <h6 className="p-2">CS 1234</h6>
+
     </div>
   );
 };
