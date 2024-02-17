@@ -15,7 +15,7 @@ const Sidenav = () => {
       }
   return (
     <div>
-      <span onClick={openNav}><FontAwesomeIcon icon={faBars} /></span>
+      <span onClick={openNav}><FontAwesomeIcon icon={faBars} className=""/></span>
       <div id="mySidenav" className="sidenav">
         <button className="closebtn" onClick={closeNav}>
           &times;
@@ -30,6 +30,7 @@ const Sidenav = () => {
 
 
       </div>
+      <h6 className="p-1">CS 1234</h6>
     </div>
   );
 };
