@@ -108,7 +108,7 @@ const Discussion = ({ discussions }) => {
                   <p>Author: {discussion.author}</p>
                   <p>Date/Time: {discussion.timestamp.toLocaleString()}</p>
                   <p>Resolved: {discussion.resolved ? "Yes" : "No"}</p>
-                  <NavLink to={`/post/${discussion.id}`}>View Details</NavLink>
+                  <NavLink to={`/post/${discussion.id}`}>View Post</NavLink>
 
                 </li>
               ))}

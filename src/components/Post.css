@@ -1,0 +1,18 @@
+.post_button {
+    color: black;
+    font-size: small;
+    max-width: 50%;
+    padding: 10px;
+}
+
+.post_button:hover {
+    color: darkcyan;
+}
+
+.reply_message {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    padding: 1rem;
+    border: 1px solid gray;
+    background-color: lightgrey;
+}

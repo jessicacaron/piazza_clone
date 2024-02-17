@@ -30,6 +30,7 @@ function Home({ discussions }) {
         <div className="col-sm-11 col-right">
           <div className="announcements">
             <h6 className="text-end">Announcements</h6>
+            <p className="p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum commodi praesentium impedit quis magnam quam! Dolorum voluptate perferendis tempore dolores, sunt dolore eligendi, expedita nesciunt nemo ea minima odio magnam, molestiae cupiditate iste adipisci! Adipisci fugit aspernatur sit recusandae illum, alias, dolores perferendis nesciunt quasi doloremque maiores repudiandae, repellendus eaque! Cupiditate quas, sit illo delectus saepe cum laborum esse nisi nesciunt fugiat. Odio blanditiis reprehenderit eos in. Expedita, nobis sunt. Repudiandae quas numquam veniam ex doloribus, nam iste, placeat, sapiente non inventore vitae in quidem! Qui necessitatibus nulla quia tenetur, doloribus consectetur inventore tempore? Voluptatibus eveniet hic nemo quaerat laboriosam, vero totam sapiente omnis. Corporis id maxime porro a quia vel suscipit beatae omnis veritatis reiciendis, vitae libero placeat, incidunt explicabo amet.</p>
           </div>
           <hr />
           <div className="posts">
