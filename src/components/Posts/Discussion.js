@@ -32,10 +32,6 @@ const Discussion = ({ discussions }) => {
     const assignmentMatchesFilter = filter
       ? discussion.assignment.includes(filter)
       : true;
-    // const assignmentMatchesSearch = searchQuery
-    //   // ? discussion.assignment.toLowerCase().includes(searchQuery.toLowerCase())
-    //   // : true;
-
     return assignmentMatchesFilter && titleMatchesSearch;
   });
 

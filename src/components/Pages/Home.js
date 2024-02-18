@@ -1,11 +1,12 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Home.css";
 import "../UI/Sidenav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAt,
   faAnglesUp,
-  faQuestion,
+  faCommentDots,
   faStamp,
   faArrowTrendUp,
   faBullhorn
@@ -27,21 +28,25 @@ function Home({ discussions }) {
               <h3>
                 <FontAwesomeIcon icon={faAt} />
               </h3>
+              Mentions
               <p>5</p>
               <br />
               <h3>
                 <FontAwesomeIcon icon={faAnglesUp} />
               </h3>
+              Upvotes
               <p>3</p>
               <br />
               <h3>
-                <FontAwesomeIcon icon={faQuestion} />
+                <FontAwesomeIcon icon={faCommentDots} />
               </h3>
+              Posts
               <p>10</p>
               <br />
               <h3>
                 <FontAwesomeIcon icon={faStamp} />
               </h3>
+              Endorsements
               <p>1</p>
             </div>
           </div>
@@ -82,6 +87,10 @@ function Home({ discussions }) {
                           Date/Time: {discussion.timestamp.toLocaleString()}
                         </p>
                         <p>Resolved: {discussion.resolved ? "Yes" : "No"}</p>
+
+                        <NavLink to={`/post/${discussion.id}`}>View Post</NavLink>
+
+
                       </div>
                     </div>
                   </div>
