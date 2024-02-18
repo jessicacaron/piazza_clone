@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function Register() {
   const navigate = useNavigate();
@@ -48,7 +48,7 @@ function Register() {
         <button onClick={handleSubmit} className="btn btn-primary">Register</button>
       </form>
       <div className="register-link">
-                <p>Already have an account? <a href="/login">Login</a></p>
+                <p>Already have an account? <Link to="/login">Login</Link></p>
             </div>
     </div>
   );
