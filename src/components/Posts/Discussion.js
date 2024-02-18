@@ -85,6 +85,15 @@ const Discussion = ({ discussions }) => {
                     >
                       CBTD 1
                     </NavLink>
+                    <NavLink
+                      className={`nav-link ${activeFilter === "CBTD 2" ? "active" : ""}`}
+                      to="/discussion"
+                      activeClassName="active"
+                      exact
+                      onClick={() => handleFilterClick("CBTD 2")}
+                    >
+                      CBTD 2
+                    </NavLink>
                   </div>
                 </div>
               </div>

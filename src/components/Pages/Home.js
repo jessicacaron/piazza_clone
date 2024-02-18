@@ -7,6 +7,8 @@ import {
   faAnglesUp,
   faQuestion,
   faStamp,
+  faArrowTrendUp,
+  faBullhorn
 } from "@fortawesome/free-solid-svg-icons";
 import Navigation from "../UI/Navigation";
 
@@ -43,31 +45,13 @@ function Home({ discussions }) {
               <p>1</p>
             </div>
           </div>
-          <div className="col-sm-11 col-right">
-            <div className="announcements">
-              <h6 className="text-end">Announcements</h6>
-              <p className="p-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                rerum commodi praesentium impedit quis magnam quam! Dolorum
-                voluptate perferendis tempore dolores, sunt dolore eligendi,
-                expedita nesciunt nemo ea minima odio magnam, molestiae
-                cupiditate iste adipisci! Adipisci fugit aspernatur sit
-                recusandae illum, alias, dolores perferendis nesciunt quasi
-                doloremque maiores repudiandae, repellendus eaque! Cupiditate
-                quas, sit illo delectus saepe cum laborum esse nisi nesciunt
-                fugiat. Odio blanditiis reprehenderit eos in. Expedita, nobis
-                sunt. Repudiandae quas numquam veniam ex doloribus, nam iste,
-                placeat, sapiente non inventore vitae in quidem! Qui
-                necessitatibus nulla quia tenetur, doloribus consectetur
-                inventore tempore? Voluptatibus eveniet hic nemo quaerat
-                laboriosam, vero totam sapiente omnis. Corporis id maxime porro
-                a quia vel suscipit beatae omnis veritatis reiciendis, vitae
-                libero placeat, incidunt explicabo amet.
-              </p>
+          <div className="col-sm-4 col-right mx-4">
+          <div className="posts">
+            <div className="text-center">
+            <FontAwesomeIcon icon={faArrowTrendUp} />
+            <p className="text-center">Trending Posts</p>
+
             </div>
-            <hr />
-            <div className="posts">
-              <p className="text-end">Recent Posts</p>
               <div
                 className="accordion accordion-flush"
                 id="accordionFlushExample"
@@ -105,6 +89,35 @@ function Home({ discussions }) {
               </div>
             </div>
           </div>
+          <div className="col-sm-6 col-far-right">
+            <div className="announcements">
+              <div className="text-center">
+              <FontAwesomeIcon icon={faBullhorn} />
+              <h6 className="">Announcements</h6>
+
+              </div>
+              <p className="p-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+                rerum commodi praesentium impedit quis magnam quam! Dolorum
+                voluptate perferendis tempore dolores, sunt dolore eligendi,
+                expedita nesciunt nemo ea minima odio magnam, molestiae
+                cupiditate iste adipisci! Adipisci fugit aspernatur sit
+                recusandae illum, alias, dolores perferendis nesciunt quasi
+                doloremque maiores repudiandae, repellendus eaque! Cupiditate
+                quas, sit illo delectus saepe cum laborum esse nisi nesciunt
+                fugiat. Odio blanditiis reprehenderit eos in. Expedita, nobis
+                sunt. Repudiandae quas numquam veniam ex doloribus, nam iste,
+                placeat, sapiente non inventore vitae in quidem! Qui
+                necessitatibus nulla quia tenetur, doloribus consectetur
+                inventore tempore? Voluptatibus eveniet hic nemo quaerat
+                laboriosam, vero totam sapiente omnis. Corporis id maxime porro
+                a quia vel suscipit beatae omnis veritatis reiciendis, vitae
+                libero placeat, incidunt explicabo amet.
+              </p>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </div>
