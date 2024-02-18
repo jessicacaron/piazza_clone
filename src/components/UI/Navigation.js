@@ -39,7 +39,7 @@ function Navigation() {
           >
             <div className="mx-2">
               
-              <ul>
+              <ul className="pt-3">
                 <li><Link to="/login">Log In</Link></li>
                 <li><Link to="/register" onClick={handleClosePopup}>Register</Link></li>
               </ul>
