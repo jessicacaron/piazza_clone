@@ -38,7 +38,7 @@ function Navigation() {
             contentStyle={{ padding: "0px", border: "none", width: "200px" }} // Customize popup style
           >
             <div className="mx-2">
-              GeeksforGeeks
+              
               <ul>
                 <li><Link to="/login">Log In</Link></li>
                 <li><Link to="/register" onClick={handleClosePopup}>Register</Link></li>
