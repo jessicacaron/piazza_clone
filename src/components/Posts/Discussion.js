@@ -10,6 +10,7 @@ const Discussion = ({ discussions }) => {
   const [activeFilter, setActiveFilter] = useState("");
   const [title, setTitle] = useState(""); // State for title
   const [description, setDescription] = useState(""); // State for description
+  const [cbtd, setCbtd] = useState(""); // State for CBTD selection
   const [addPost, setAddPost] = useState(false);
   // Event handler for updating search query
   const handleSearchInputChange = (event) => {
@@ -30,6 +31,11 @@ const Discussion = ({ discussions }) => {
   const handleEditorChange = (content, editor) => {
     setDescription(content);
   };
+
+    // Handler for CBTD radio button change
+    const handleCbtdChange = (event) => {
+      setCbtd(event.target.value);
+    };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -173,13 +179,46 @@ const Discussion = ({ discussions }) => {
                 }}
               />
             </div>
+            <div className="mb-3">
+              <label className="form-label">Assignment:</label>
+              <div>
+                <div className="form-check form-check-inline">
+                  <input
+                    type="radio"
+                    id="cbtd1"
+                    name="cbtd"
+                    className="form-check-input"
+                    value="CBTD 1"
+                    checked={cbtd === "CBTD 1"}
+                    onChange={handleCbtdChange}
+                  />
+                  <label htmlFor="cbtd1" className="form-check-label">
+                    CBTD 1
+                  </label>
+                </div>
+                <div className="form-check form-check-inline">
+                  <input
+                    type="radio"
+                    id="cbtd2"
+                    name="cbtd"
+                    className="form-check-input"
+                    value="CBTD 2"
+                    checked={cbtd === "CBTD 2"}
+                    onChange={handleCbtdChange}
+                  />
+                  <label htmlFor="cbtd2" className="form-check-label">
+                    CBTD 2
+                  </label>
+                </div>
+              </div>
+            </div>
             <button type="submit" className="btn btn-primary">
               Submit
             </button>
-            <button type="" onClick={handleAddPost} className="btn btn-secondary">
+            <button type="button" onClick={handleAddPost} className="btn btn-secondary">
               Cancel
             </button>
-          </form>            
+          </form>         
           ) : (
               <button onClick={handleAddPost}>Add Post</button> // Replace with your JSX elements for when addPost is false
             )}
