@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navigation from './components/UI/Navigation'; // Import the Navigation component
 import Home from './components/Pages/Home'; // Import other components
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
@@ -113,7 +112,6 @@ function App() {
   return (
     <Router>
       <div>
-        <Navigation /> 
         <Routes>
           <Route exact path="/" element={<Home discussions={discussions} />} />
           <Route path="/login" element={<Login />} />

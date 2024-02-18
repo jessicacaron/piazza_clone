@@ -1,16 +1,15 @@
 import React, {useRef} from "react";
-
 import { Editor } from "@tinymce/tinymce-react";
+import Navigation from "../UI/Navigation";
+
 
 const Reply = () => {
   const editorRef = useRef(null);
-//   const log = () => {
-//     if (editorRef.current) {
-//       console.log(editorRef.current.getContent());
-//     }
-//   };
+
+  
   return (
     <div>
+      <Navigation />
       <p>Reply</p>
       <Editor
         apiKey="5mhh69z795oqwvsb5r5cvzv1n8v0zllu3sft8o947z6nbhrh"

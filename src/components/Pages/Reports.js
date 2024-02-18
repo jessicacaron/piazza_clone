@@ -1,5 +1,6 @@
 import React from "react";
 import { useReactToPrint } from "react-to-print";
+import Navigation from "../UI/Navigation";
 
 const Report = ({students}) => { 
 
@@ -16,7 +17,9 @@ const Report = ({students}) => {
 
   return (
     <div>
-      <h2>Student Reports</h2>
+      <Navigation />
+      <div className="container">
+      <h6>Student Reports</h6>
       <table className="table">
         <thead>
           <tr>
@@ -43,6 +46,8 @@ const Report = ({students}) => {
       <button onClick={handlePrint}>Print</button>
         <button onClick={handleExportPDF}>Export PDF</button>
       </div>
+      </div>
+
     </div>
     
   );

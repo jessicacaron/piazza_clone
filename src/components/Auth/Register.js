@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -18,13 +21,14 @@ function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData); // You can handle form submission logic here
+    console.log(formData);
+    navigate("/");
   };
 
   return (
     <div className="container">
       <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
+      <form>
         <div className="mb-3">
           <label htmlFor="firstName" className="form-label">First Name</label>
           <input type="text" className="form-control" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} required />
@@ -41,7 +45,7 @@ function Register() {
           <label htmlFor="password" className="form-label">Password</label>
           <input type="password" className="form-control" id="password" name="password" value={formData.password} onChange={handleChange} required />
         </div>
-        <button type="submit" className="btn btn-primary">Register</button>
+        <button onClick={handleSubmit} className="btn btn-primary">Register</button>
       </form>
       <div className="register-link">
                 <p>Already have an account? <a href="/login">Login</a></p>

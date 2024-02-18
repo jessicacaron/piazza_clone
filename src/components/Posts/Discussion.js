@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Discussion.css";
+import Navigation from "../UI/Navigation";
 
 
 
@@ -40,7 +41,7 @@ const Discussion = ({ discussions }) => {
 
   return (
     <div>
-      {/* <Sidenav></Sidenav> */}
+      <Navigation />
       <div className="main">
         <div className="row">
           <div className="col-md-2 col col-left text-center">
