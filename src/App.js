@@ -8,6 +8,7 @@ import Reports from './components/Pages/Reports';
 import Post from './components/Posts/Post';
 import Reply from './components/Posts/Reply';
 import Admin from './components/Admin/Admin';
+import StudentResources from './components/Pages/StudentResources';
 
 
 
@@ -123,6 +124,8 @@ function App() {
           <Route path="/reports" element={<Reports students={students}/>} />
           <Route path="/reply" element={<Reply />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/studentresources" element={<StudentResources />} />
+
           <Route path="/post/:id" element={<Post discussions={discussions} />} /> {/* Pass discussions as prop */}
         </Routes>
       </div>

@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Discussion.css";
 import Navigation from "../UI/Navigation";
-
-
+import { Editor } from "@tinymce/tinymce-react"; // Import TinyMCE Editor
 
 const Discussion = ({ discussions }) => {
-  // State for the search query
   const [searchQuery, setSearchQuery] = useState("");
-  // State for the filter
   const [filter, setFilter] = useState("");
-  const [activeFilter, setActiveFilter] = useState(""); // State to keep track of active filter
-
+  const [activeFilter, setActiveFilter] = useState("");
+  const [title, setTitle] = useState(""); // State for title
+  const [description, setDescription] = useState(""); // State for description
+  const [addPost, setAddPost] = useState(false);
   // Event handler for updating search query
   const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value);
@@ -23,6 +22,28 @@ const Discussion = ({ discussions }) => {
     setActiveFilter(filter);
     setSearchQuery(""); // Clear search query when a filter is applied
   };
+
+  const handleTitleChange = (event) => {
+    setTitle(event.target.value);
+  };
+
+  const handleEditorChange = (content, editor) => {
+    setDescription(content);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Handle form submission here
+    console.log("Title:", title);
+    console.log("Description:", description);
+    // Reset form fields after submission if needed
+    setTitle("");
+    setDescription("");
+  };
+
+  const handleAddPost = () => {
+    setAddPost(!addPost);
+  }
 
   // Filtered discussions based on search query and filter
   const filteredDiscussions = discussions.filter((discussion) => {
@@ -64,7 +85,9 @@ const Discussion = ({ discussions }) => {
                 >
                   <div className="accordion-body">
                     <NavLink
-                      className={`nav-link ${activeFilter === "" ? "active" : ""}`}
+                      className={`nav-link ${
+                        activeFilter === "" ? "active" : ""
+                      }`}
                       to="/discussion"
                       activeClassName="active"
                       exact
@@ -73,7 +96,9 @@ const Discussion = ({ discussions }) => {
                       No Filter
                     </NavLink>
                     <NavLink
-                      className={`nav-link ${activeFilter === "CBTD 1" ? "active" : ""}`}
+                      className={`nav-link ${
+                        activeFilter === "CBTD 1" ? "active" : ""
+                      }`}
                       to="/discussion"
                       activeClassName="active"
                       exact
@@ -82,7 +107,9 @@ const Discussion = ({ discussions }) => {
                       CBTD 1
                     </NavLink>
                     <NavLink
-                      className={`nav-link ${activeFilter === "CBTD 2" ? "active" : ""}`}
+                      className={`nav-link ${
+                        activeFilter === "CBTD 2" ? "active" : ""
+                      }`}
                       to="/discussion"
                       activeClassName="active"
                       exact
@@ -97,6 +124,7 @@ const Discussion = ({ discussions }) => {
           </div>
 
           <div className="col-md-10 p-4">
+
             {/* Search input field */}
             <input
               type="text"
@@ -105,6 +133,58 @@ const Discussion = ({ discussions }) => {
               onChange={handleSearchInputChange}
               className="form-control mb-3"
             />
+            {/* Dropdown form for adding a new post */}
+            {addPost ? (
+            <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label htmlFor="title" className="form-label">
+                Title:
+              </label>
+              <input
+                type="text"
+                id="title"
+                className="form-control"
+                value={title}
+                onChange={handleTitleChange}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="description" className="form-label">
+                Description:
+              </label>
+              <Editor
+                apiKey="5mhh69z795oqwvsb5r5cvzv1n8v0zllu3sft8o947z6nbhrh" // Replace with your TinyMCE API key
+                id="description"
+                initialValue={description}
+                onEditorChange={handleEditorChange}
+                init={{
+                  height: 300,
+                  menubar: false,
+                  plugins: [
+                    "advlist autolink lists link image charmap print preview anchor",
+                    "searchreplace visualblocks code fullscreen",
+                    "insertdatetime media table paste code help wordcount",
+                  ],
+                  toolbar:
+                    // eslint-disable-next-line
+                    "undo redo | formatselect | bold italic backcolor | \
+                    alignleft aligncenter alignright alignjustify | \
+                    bullist numlist outdent indent | removeformat | help",
+                }}
+              />
+            </div>
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+            <button type="" onClick={handleAddPost} className="btn btn-secondary">
+              Cancel
+            </button>
+          </form>            
+          ) : (
+              <button onClick={handleAddPost}>Add Post</button> // Replace with your JSX elements for when addPost is false
+            )}
+
+            
             <ul>
               {/* Render filtered discussions */}
               {filteredDiscussions.map((discussion) => (
@@ -115,7 +195,6 @@ const Discussion = ({ discussions }) => {
                   <p>Date/Time: {discussion.timestamp.toLocaleString()}</p>
                   <p>Resolved: {discussion.resolved ? "Yes" : "No"}</p>
                   <NavLink to={`/post/${discussion.id}`}>View Post</NavLink>
-
                 </li>
               ))}
             </ul>

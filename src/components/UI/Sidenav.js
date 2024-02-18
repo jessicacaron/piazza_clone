@@ -25,11 +25,7 @@ const Sidenav = () => {
         <NavLink to="/discussion" className="my-4 pl-4" onClick={closeNav}>Discussions</NavLink>
         <NavLink to="/reports" className="my-4 pl-4" onClick={closeNav}>Reports</NavLink>
         <NavLink to="/admin" className="my-4 pl-4" onClick={closeNav}>Admin</NavLink>
-
-
-   
-        
-
+        <NavLink to="/studentresources" className="my-4 pl-4" onClick={closeNav}>Student Resources</NavLink>   
 
       </div>
       <h6 className="p-2">CS 1234</h6>
