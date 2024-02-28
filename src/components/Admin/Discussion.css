@@ -12,10 +12,3 @@ ul {
     list-style: none;
 }
 
-.active-filter {
-    background-color: lightblue;
-  }
-  
-  .inactive-filter {
-    background-color: white;
-  }

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./Home.css";
+import "../Pages/Home.css";
 import "../UI/Sidenav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,16 +10,18 @@ import {
   faStamp,
   faArrowTrendUp,
   faBullhorn,
-  faBookmark
+  faEdit,
+  faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import Navigation from "../UI/Navigation";
 
-function Home({ discussions }) {
+function AdminHome({ discussions }) {
   // Slice the discussions array to get only the first three discussions
   const recentDiscussions = discussions.slice(0, 3);
 
   return (
     <div>
+        <NavLink to="/admin">Admin Tools</NavLink>
       <Navigation />
 
       <div className="mx-3">
@@ -49,21 +51,14 @@ function Home({ discussions }) {
               </h3>
               Endorsements
               <p>1</p>
-              <br />
-              <h3>
-                <FontAwesomeIcon icon={faBookmark} />
-              </h3>
-              Saved Posts
-              <p>2</p>
             </div>
           </div>
           <div className="col-sm-4 col-right mx-4">
-          <div className="posts">
-            <div className="text-center">
-            <FontAwesomeIcon icon={faArrowTrendUp} />
-            <p className="text-center">Trending Posts</p>
-
-            </div>
+            <div className="posts">
+              <div className="text-center">
+                <FontAwesomeIcon icon={faArrowTrendUp} />
+                <p className="text-center">Trending Posts</p>
+              </div>
               <div
                 className="accordion accordion-flush"
                 id="accordionFlushExample"
@@ -94,10 +89,18 @@ function Home({ discussions }) {
                           Date/Time: {discussion.timestamp.toLocaleString()}
                         </p>
                         <p>Resolved: {discussion.resolved ? "Yes" : "No"}</p>
-
-                        <NavLink to={`/post/${discussion.id}`}>View Post</NavLink>
-
-
+                          <NavLink to={`/adminpost/${discussion.id}`} className="px-4">
+                           View Post
+                          </NavLink>
+                          {/* Edit NavLink */}
+                          <NavLink to={`/adminpost/${discussion.id}/edit`} className="px-4">
+                            <FontAwesomeIcon icon={faEdit} />
+                            
+                          </NavLink>
+                          <NavLink to={`/adminpost/${discussion.id}/delete`} className="px-4">
+                            <FontAwesomeIcon icon={faCircleXmark} />
+                            
+                          </NavLink>
                       </div>
                     </div>
                   </div>
@@ -108,9 +111,8 @@ function Home({ discussions }) {
           <div className="col-sm-6 col-far-right">
             <div className="announcements">
               <div className="text-center">
-              <FontAwesomeIcon icon={faBullhorn} />
-              <h6 className="">Announcements</h6>
-
+                <FontAwesomeIcon icon={faBullhorn} />
+                <h6 className="">Announcements</h6>
               </div>
               <p className="p-4">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
@@ -131,13 +133,11 @@ function Home({ discussions }) {
                 libero placeat, incidunt explicabo amet.
               </p>
             </div>
-
           </div>
-
         </div>
       </div>
     </div>
   );
 }
 
-export default Home;
+export default AdminHome;

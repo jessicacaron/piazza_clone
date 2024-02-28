@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComments, faGear, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBell, faComments, faGear, faUser } from "@fortawesome/free-solid-svg-icons";
 import Sidenav from "./Sidenav";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
@@ -29,7 +29,7 @@ function Navigation() {
         </div>
         
         <span className="px-2">
-          
+          {/* Settings */}
           <Popup
             trigger={<FontAwesomeIcon className="px-4" icon={faGear}  size="sm"/>}
             position="left center"
@@ -42,6 +42,22 @@ function Navigation() {
               <ul className="pt-3">
                 <li><Link to="/login">Log In</Link></li>
                 <li><Link to="/register" onClick={handleClosePopup}>Register</Link></li>
+              </ul>
+            </div>
+          </Popup>
+          {/* Notifications */}
+          <Popup
+            trigger={<FontAwesomeIcon className="px-4" icon={faBell}  size="sm"/>}
+            position="left center"
+            open={isPopupOpen}
+            onClose={handleClosePopup} // Function to handle closing of the popup
+            contentStyle={{ padding: "0px", border: "none", width: "200px" }} // Customize popup style
+          >
+            <div className="mx-2">
+              
+              <ul className="pt-3">
+                <li><Link to="/admindiscussion">** New Comment</Link></li>
+                <li><Link to="/admindiscussion" onClick={handleClosePopup}>** New Post</Link></li>
               </ul>
             </div>
           </Popup>

@@ -9,6 +9,11 @@ import Post from './components/Posts/Post';
 import Reply from './components/Posts/Reply';
 import Admin from './components/Admin/Admin';
 import StudentResources from './components/Pages/StudentResources';
+import AdminHome from './components/Admin/AdminHome';
+import AdminDiscussion from './components/Admin/AdminDiscussion';
+import AdminPost from './components/Admin/AdminPost';
+import EditCourse from './components/Admin/EditCourse';
+import EditPost from './components/Admin/EditPost';
 
 
 
@@ -110,16 +115,31 @@ function App() {
     },
   ];
 
+  const courses = [    {
+    id: 1,
+    name: "CS 1234",
+    term: "Fall 2023",
+    credits: 4,
+    students: 15,
+  },]
+
+
   return (
     <Router>
       <div>
         <Routes>
-          <Route exact path="/" element={<Home discussions={discussions} />} />
+        <Route exact path="/" element={<Home discussions={discussions} />} />
+        <Route exact path="/AdminHome" element={<AdminHome discussions={discussions} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/editpost" element={<EditPost discussions={discussions}/>} />
           <Route
             path="/discussion"
             element={<Discussion discussions={discussions} />} // Pass discussions as prop
+          />
+          <Route
+            path="/admindiscussion"
+            element={<AdminDiscussion discussions={discussions} />} // Pass discussions as prop
           />
           <Route path="/reports" element={<Reports students={students}/>} />
           <Route path="/reply" element={<Reply />} />
@@ -127,6 +147,10 @@ function App() {
           <Route path="/studentresources" element={<StudentResources />} />
 
           <Route path="/post/:id" element={<Post discussions={discussions} />} /> {/* Pass discussions as prop */}
+          <Route path="/adminpost/:id" element={<AdminPost discussions={discussions} />} /> {/* Pass discussions as prop */}
+        {/* Add route for the edit page */}
+        <Route path="/editcourse/:id" element={<EditCourse courses={courses} />} />
+
         </Routes>
       </div>
     </Router>
